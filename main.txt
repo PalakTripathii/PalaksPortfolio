@@ -1,0 +1,11 @@
+import requests
+import bs4
+
+res = requests.get('https://57806939-ac2d-4c65-a7e8-a6bba5418fc9-00-33oyzfm5uym3o.spock.repl.co/')
+
+#print(res.raise_for_status())
+
+parseSoup = bs4.BeautifulSoup(res.text,'html.parser')
+
+elements= parseSoup.select('p')
+print(elements)
